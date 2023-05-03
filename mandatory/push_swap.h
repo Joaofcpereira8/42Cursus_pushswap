@@ -48,6 +48,8 @@ int			rrr(t_stack *stack_a, t_stack *stack_b);
 void		delete_top_node(t_stack *stack);
 void 		operations(t_stack *stack_a, t_stack *stack_b, char *oper);
 void 		operations2(t_stack *stack_a, t_stack *stack_b, char *oper);
+void		sort2(t_stack *stack_a, t_stack *stack_b);
+void 		sort3(t_stack *stk_a, t_stack *stk_b);
 
 
 
