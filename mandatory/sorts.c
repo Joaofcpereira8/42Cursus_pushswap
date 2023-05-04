@@ -43,4 +43,26 @@ void sort3(t_stack *stk_a, t_stack *stk_b)
 		operations(stk_a, stk_b, "rra");
 }
 
-void
+void sort5(t_stack *stk_a, t_stack *stk_b)
+{
+	int position;
+
+	position = find_min_pos(stk_a);
+	sort_min_max(stk_a, stk_b, position);
+	operations(stk_a, stk_b, "pb");
+	if (stk_a->size == 4)
+	{
+		position = find_max_pos(stk_a);
+		sort_min_max(stk_a, stk_b, position);
+		operations(stk_a, stk_b, "pb");
+	}
+	sort3(stk_a, stk_b);
+	if (stk_a->size == 3 && stk_b->size == 2)
+	{
+		operations(stk_a, stk_b, "pa");
+		operations(stk_a, stk_b, "ra");
+		operations(stk_a, stk_b, "pa");
+	}
+	if (stk_a->size == 3 && stk_b->size == 1)
+		operations(stk_a, stk_b, "pa");
+}

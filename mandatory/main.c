@@ -102,5 +102,5 @@ int main(int argc, char **argv)
 		if(check_order_sorted(&stack_a) == 0)
 			return (-1);
 	}
-	print_list(&stack_a);
+//	print_list(&stack_a);
 }

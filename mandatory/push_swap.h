@@ -50,7 +50,10 @@ void 		operations(t_stack *stack_a, t_stack *stack_b, char *oper);
 void 		operations2(t_stack *stack_a, t_stack *stack_b, char *oper);
 void		sort2(t_stack *stack_a, t_stack *stack_b);
 void 		sort3(t_stack *stk_a, t_stack *stk_b);
-
+void 		sort5(t_stack *stk_a, t_stack *stk_b);
+int 		find_max_pos(t_stack *stack);
+int 		find_min_pos(t_stack *stack);
+void		sort_min_max(t_stack *stk_a, t_stack *stk_b, int position);
 
 
 
