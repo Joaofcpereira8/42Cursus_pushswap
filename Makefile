@@ -21,7 +21,9 @@ LIBFT = libft/libft.a
 SRCS = mandatory/main.c \
 		mandatory/utils.c \
 		mandatory/utils2.c \
+		mandatory/utils3.c \
 		mandatory/sorts.c \
+		mandatory/sort_main.c \
 		mandatory/checkers.c \
 		mandatory/operations1.c \
 		mandatory/operations2.c \

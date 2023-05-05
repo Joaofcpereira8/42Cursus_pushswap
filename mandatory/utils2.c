@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jofilipe <jofilipe@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jofilipe <jofilipe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 12:54:45 by jofilipe          #+#    #+#             */
-/*   Updated: 2023/05/03 12:54:45 by jofilipe         ###   ########.fr       */
+/*   Created: 2023/05/05 17:13:32 by jofilipe          #+#    #+#             */
+/*   Updated: 2023/05/05 17:13:32 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,23 @@ void	sort_min_max(t_stack *stk_a, t_stack *stk_b, int position)
 			operations(stk_a, stk_b, "rra");
 			position++;
 		}
+	}
+}
+
+int match(t_stack *stack_b, int num)
+{
+	int match_num;
+	int max;
+	t_stack *stack2;
+
+	match_num = find_min(stack_b);
+	max = find_max(stack_b);
+	stack2 = copy_stack(stack_b);
+	if (stack2->top->data > max || stack2->top->data < match_num)
+		return (max);
+	while (stack2->size--)
+	{
+		if (stack2->top->data < num && stack2->top->data > match_num)
+			match_num = stack2->top->data;
 	}
 }

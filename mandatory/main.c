@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jofilipe <jofilipe@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jofilipe <jofilipe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 18:49:06 by jofilipe          #+#    #+#             */
-/*   Updated: 2023/04/27 15:02:21 by jofilipe         ###   ########.fr       */
+/*   Created: 2023/05/05 17:13:45 by jofilipe          #+#    #+#             */
+/*   Updated: 2023/05/05 17:13:45 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int main(int argc, char **argv)
 		if(check_order_sorted(&stack_a) == 0)
 			return (-1);
 	}
+	sort_alg(&stack_a, &stack_b);
 //	print_list(&stack_a);
 }

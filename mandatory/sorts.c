@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order.c                                            :+:      :+:    :+:   */
+/*   sorts.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jofilipe <jofilipe@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jofilipe <jofilipe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 11:52:52 by jofilipe          #+#    #+#             */
-/*   Updated: 2023/04/24 11:52:52 by jofilipe         ###   ########.fr       */
+/*   Created: 2023/05/05 17:13:23 by jofilipe          #+#    #+#             */
+/*   Updated: 2023/05/05 17:13:23 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_alg(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a->size == 2)
+		sort2(stack_a, stack_b);
+	if (stack_a->size == 3)
+		sort3(stack_a, stack_b);
+	if (stack_a->size == 4 || stack_a->size == 5)
+		sort5(stack_a, stack_b);
+//	if (stack_a->size > 5)
+//		sort_big(stack_a, stack_b);
+}
 
 void	sort2(t_stack *stack_a, t_stack *stack_b)
 {
@@ -66,3 +78,4 @@ void sort5(t_stack *stk_a, t_stack *stk_b)
 	if (stk_a->size == 3 && stk_b->size == 1)
 		operations(stk_a, stk_b, "pa");
 }
+

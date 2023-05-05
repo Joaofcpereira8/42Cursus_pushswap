@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jofilipe <jofilipe@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: jofilipe <jofilipe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 18:49:06 by jofilipe          #+#    #+#             */
-/*   Updated: 2023/04/22 18:49:06 by jofilipe         ###   ########.fr       */
+/*   Created: 2023/05/05 17:14:31 by jofilipe          #+#    #+#             */
+/*   Updated: 2023/05/05 17:14:31 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ void 		sort5(t_stack *stk_a, t_stack *stk_b);
 int 		find_max_pos(t_stack *stack);
 int 		find_min_pos(t_stack *stack);
 void		sort_min_max(t_stack *stk_a, t_stack *stk_b, int position);
+void		sort_alg(t_stack *stack_a, t_stack *stack_b);
+void		sort_big(t_stack *stk_a, t_stack *stk_b);
+int 		match(t_stack *stack_b, int num);
+int 		find_min(t_stack *stack);
+int 		find_max(t_stack *stack);
+
 
 
 
