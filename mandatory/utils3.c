@@ -49,3 +49,15 @@ int find_max(t_stack *stack)
 	}
 	return (max);
 }
+
+void	moves_to_0(t_moves_index *init)
+{
+	init->ra = 0;
+	init->rb = 0;
+	init->rr = 0;
+	init->rra = 0;
+	init->rrb = 0;
+	init->rrr = 0;
+	init->num_a = 0;
+	init->num_b = 0;
+}

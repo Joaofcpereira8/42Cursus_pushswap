@@ -20,14 +20,27 @@ typedef struct	s_stack
 {
     int				size;
     struct s_node	*top;
+	char 			id;
 }					t_stack;
 
-typedef struct s_node
+typedef struct	s_node
 {
     int				data;
     struct s_node	*next;
     struct s_node	*prev;
 }					t_node;
+
+typedef struct	moves_index
+{
+	int 			ra;
+	int 			rb;
+	int 			rr;
+	int 			rra;
+	int 			rrb;
+	int 			rrr;
+	int 			num_a;
+	int 			num_b;
+}					t_moves_index;
 
 int 		string_to_stack(char *argv, t_stack *stack_a);
 int 		param_to_stack(int argc, char **argv, t_stack *stack);
@@ -59,6 +72,9 @@ void		sort_big(t_stack *stk_a, t_stack *stk_b);
 int 		match(t_stack *stack_b, int num);
 int 		find_min(t_stack *stack);
 int 		find_max(t_stack *stack);
+int 		find_index(t_stack *stack, int num);
+void		moves_to_0(t_moves_index *init);
+void		count_moves(t_stack *stack, t_moves_index *init ,int num);
 
 
 

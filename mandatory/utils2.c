@@ -94,5 +94,24 @@ int match(t_stack *stack_b, int num)
 	{
 		if (stack2->top->data < num && stack2->top->data > match_num)
 			match_num = stack2->top->data;
+		stack2->top = stack2->top->next;
 	}
+
+	return (match_num);
+}
+
+int find_index(t_stack *stack, int num)
+{
+	int index;
+	t_stack *stack_2;
+
+	index = 0;
+	stack_2 = copy_stack(stack);
+	while(num != stack->top->data)
+	{
+		stack->top = stack->top->next;
+		index++;
+	}
+	free (stack_2);
+	return (index);
 }

@@ -71,6 +71,8 @@ void	stack_init(t_stack *stack_a, t_stack *stack_b)
 {
 	stack_a->size = 0;
 	stack_b->size = 0;
+	stack_a->id = 'a';
+	stack_b->id = 'b';
 }
 
 int main(int argc, char **argv)

@@ -20,8 +20,8 @@ void	sort_alg(t_stack *stack_a, t_stack *stack_b)
 		sort3(stack_a, stack_b);
 	if (stack_a->size == 4 || stack_a->size == 5)
 		sort5(stack_a, stack_b);
-//	if (stack_a->size > 5)
-//		sort_big(stack_a, stack_b);
+	if (stack_a->size > 5)
+		sort_big(stack_a, stack_b);
 }
 
 void	sort2(t_stack *stack_a, t_stack *stack_b)

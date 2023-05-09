@@ -16,5 +16,11 @@ void	sort_big(t_stack *stk_a, t_stack *stk_b)
 {
 	operations(stk_a, stk_b, "pb");
 	operations(stk_a, stk_b, "pb");
+	count_moves(stk_a, )
+	printf("%i\n", match(stk_b, stk_a->top->data));
+}
+
+void	count_moves(t_stack *stack, t_moves_index *init ,int num)
+{
 
 }
