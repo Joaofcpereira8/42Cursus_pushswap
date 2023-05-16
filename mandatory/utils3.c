@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-int find_min(t_stack *stack)
+int	find_min(t_stack *stack)
 {
-	int min;
-	int i;
-	t_stack *stack2;
+	int		min;
+	int		i;
+	t_stack	*stack2;
 
 	i = 1;
 	stack2 = copy_stack(stack);
@@ -31,11 +31,11 @@ int find_min(t_stack *stack)
 	return (min);
 }
 
-int find_max(t_stack *stack)
+int	find_max(t_stack *stack)
 {
-	int max;
-	int i;
-	t_stack *stack2;
+	int		max;
+	int		i;
+	t_stack	*stack2;
 
 	i = 1;
 	stack2 = copy_stack(stack);
@@ -58,6 +58,36 @@ void	moves_to_0(t_moves_index *init)
 	init->rra = 0;
 	init->rrb = 0;
 	init->rrr = 0;
-	init->num_a = 0;
-	init->num_b = 0;
+	init->sum = 0;
+}
+
+int	sum_moves(t_moves_index *init)
+{
+	int	total;
+
+	total = 0;
+	convert_rotates(init);
+	total += init->ra;
+	total += init->rb;
+	total += init->rra;
+	total += init->rrb;
+	total += init->rr;
+	total += init->rrr;
+	return (total);
+}
+
+void	convert_rotates(t_moves_index *init)
+{
+	while (init->ra >= 1 && init->rb >= 1)
+	{
+		init->rr += 1;
+		init->ra--;
+		init->rb--;
+	}
+	while (init->rra >= 1 && init->rrb >= 1)
+	{
+		init->rrr += 1;
+		init->rra--;
+		init->rrb--;
+	}
 }

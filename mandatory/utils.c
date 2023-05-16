@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-t_node *create_node(int num)
+t_node	*create_node(int num)
 {
-	t_node *newNode;
+	t_node	*new_node;
 
-	newNode = malloc (sizeof(t_node));
-	newNode->data = num;
-	newNode->next = NULL;
-	newNode->prev = NULL;
-	return (newNode);
+	new_node = malloc (sizeof(t_node));
+	new_node->data = num;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
 }
 
 void	stack_modif(t_node *new_node, t_stack *stack)
@@ -43,7 +43,7 @@ void	stack_modif(t_node *new_node, t_stack *stack)
 	}
 }
 
-int check_num(char *str)
+int	check_num(char *str)
 {
 	if (str[0] == '0' && ft_atoi(str) == 0 && (str[1] == ' ' || str[1] == '\0'))
 		return (1);
@@ -54,19 +54,20 @@ int check_num(char *str)
 	return (-1);
 }
 
-t_stack		*copy_stack(t_stack *stack)
+t_stack	*copy_stack(t_stack *stack)
 {
-	t_stack *stack_copy;
+	t_stack	*stack_copy;
 
 	stack_copy = malloc(sizeof (t_stack));
 	stack_copy->size = stack->size;
 	stack_copy->top = stack->top;
+	stack_copy->id = stack->id;
 	return (stack_copy);
 }
 
 void	delete_top_node(t_stack *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = stack->top;
 	stack->top = stack->top->next;

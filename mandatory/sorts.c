@@ -30,13 +30,13 @@ void	sort2(t_stack *stack_a, t_stack *stack_b)
 		operations(stack_a, stack_b, "sa");
 }
 
-void sort3(t_stack *stk_a, t_stack *stk_b)
+void	sort3(t_stack *stk_a, t_stack *stk_b)
 {
 	if (stk_a->top->data > stk_a->top->next->data && stk_a->top->next->data
 		< stk_a->top->prev->data && stk_a->top->data < stk_a->top->prev->data)
 		operations(stk_a, stk_b, "sa");
 	if (stk_a->top->data > stk_a->top->next->data && stk_a->top->next->data
-	> stk_a->top->prev->data && stk_a->top->data > stk_a->top->prev->data)
+		> stk_a->top->prev->data && stk_a->top->data > stk_a->top->prev->data)
 	{
 		operations(stk_a, stk_b, "sa");
 		operations(stk_a, stk_b, "rra");
@@ -55,9 +55,9 @@ void sort3(t_stack *stk_a, t_stack *stk_b)
 		operations(stk_a, stk_b, "rra");
 }
 
-void sort5(t_stack *stk_a, t_stack *stk_b)
+void	sort5(t_stack *stk_a, t_stack *stk_b)
 {
-	int position;
+	int	position;
 
 	position = find_min_pos(stk_a);
 	sort_min_max(stk_a, stk_b, position);
@@ -78,4 +78,3 @@ void sort5(t_stack *stk_a, t_stack *stk_b)
 	if (stk_a->size == 3 && stk_b->size == 1)
 		operations(stk_a, stk_b, "pa");
 }
-

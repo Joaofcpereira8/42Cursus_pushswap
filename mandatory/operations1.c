@@ -14,7 +14,7 @@
 
 int	swap(t_stack *stack)
 {
-	int temp;
+	int	temp;
 
 	if (stack->size < 2)
 		return (-1);
@@ -33,7 +33,7 @@ int	ss(t_stack *stack_a, t_stack *stack_b)
 	return (0);
 }
 
-int push(t_stack *source, t_stack *dest)
+int	push(t_stack *source, t_stack *dest)
 {
 	if (source->size == 0)
 		return (-1);
@@ -43,7 +43,7 @@ int push(t_stack *source, t_stack *dest)
 	return (0);
 }
 
-int rotate(t_stack *stack)
+int	rotate(t_stack *stack)
 {
 	if (stack->size == 0)
 		return (-1);
@@ -51,7 +51,7 @@ int rotate(t_stack *stack)
 	return (0);
 }
 
-int reverse(t_stack *stack)
+int	reverse(t_stack *stack)
 {
 	if (stack->size == 0)
 		return (-1);
