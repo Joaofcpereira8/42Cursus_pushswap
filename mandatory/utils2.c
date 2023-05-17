@@ -32,6 +32,7 @@ int	find_max_pos(t_stack *stack)
 		stack2->top = stack2->top->next;
 		i++;
 	}
+	free (stack2);
 	return (pos);
 }
 

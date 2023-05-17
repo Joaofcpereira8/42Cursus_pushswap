@@ -74,7 +74,6 @@ void			sort5(t_stack *stk_a, t_stack *stk_b);
 void			sort_big(t_stack *stk_a, t_stack *stk_b);
 void			count_moves(t_stack *stack, t_moves_index *init, int num);
 t_moves_index	sort(t_stack *stack_a, t_stack *stack_b);
-int				sort_p2(t_moves_index *init, t_moves_index *best_init);
 void			execute(t_moves_index *init, t_stack *stk_a, t_stack *stk_b);
 void			execute2(t_moves_index *init, t_stack *stk_a, t_stack *stk_b);
 
@@ -98,5 +97,12 @@ int				find_max(t_stack *stack);
 void			moves_to_0(t_moves_index *init);
 int				sum_moves(t_moves_index *init);
 void			convert_rotates(t_moves_index *init);
+
+//-------utils4-------//
+int				sort_p2(t_moves_index *init, t_moves_index *best_init);
+void			free_strings(char **str, int j);
+void			free_stacks(t_stack *stack_a, t_stack *stack_b);
+int				stack_string(char *argv, t_stack *stack_a);
+int				stack_args(int argc, char **argv, t_stack *stack_a);
 
 #endif //PUSH_SWAP_H

@@ -28,6 +28,7 @@ int	find_min(t_stack *stack)
 		stack2->top = stack2->top->next;
 		i++;
 	}
+	free (stack2);
 	return (min);
 }
 
@@ -47,6 +48,7 @@ int	find_max(t_stack *stack)
 		stack2->top = stack2->top->next;
 		i++;
 	}
+	free (stack2);
 	return (max);
 }
 

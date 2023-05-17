@@ -35,22 +35,31 @@ int	string_to_stack(char *argv, t_stack *stack)
 	int		i;
 	char	**ar;
 	int		temp;
+	int		j;
 
 	ar = ft_split(argv, ' ');
 	i = 0;
 	while (ar[i])
 		i++;
 	i--;
+	j = i;
 	if (check_dups_str(ar, i) == -1)
+	{
+		free_strings(ar, j);
 		return (-1);
+	}
 	while (i >= 0)
 	{
 		if (check_num(ar[i]) == -1)
+		{
+			free_strings(ar, j);
 			return (-1);
+		}
 		temp = ft_atoi(ar[i]);
 		stack_modif(create_node(temp), stack);
 		i--;
 	}
+	free_strings(ar, j);
 	return (0);
 }
 
@@ -70,23 +79,20 @@ int	main(int argc, char **argv)
 	stack_init(&stack_a, &stack_b);
 	if (argc == 2)
 	{
-		if (string_to_stack(argv[1], &stack_a) == -1)
+		if (stack_string(argv[1], &stack_a) == -1)
 		{
-			write (2, "Error\n", 6);
+			free_stacks(&stack_a, &stack_b);
 			return (-1);
 		}
-		if (check_order_sorted(&stack_a) == 0)
-			return (-1);
 	}
 	if (argc > 2)
 	{
-		if (param_to_stack(argc, argv, &stack_a) == -1)
+		if (stack_args(argc, argv, &stack_a) == -1)
 		{
-			write (2, "Error\n", 6);
+			free_stacks(&stack_a, &stack_b);
 			return (-1);
 		}
-		if (check_order_sorted(&stack_a) == 0)
-			return (-1);
 	}
 	sort_alg(&stack_a, &stack_b);
+	free_stacks(&stack_a, &stack_b);
 }
