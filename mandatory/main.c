@@ -34,7 +34,6 @@ int	string_to_stack(char *argv, t_stack *stack)
 {
 	int		i;
 	char	**ar;
-	int		temp;
 	int		j;
 
 	ar = ft_split(argv, ' ');
@@ -43,23 +42,28 @@ int	string_to_stack(char *argv, t_stack *stack)
 		i++;
 	i--;
 	j = i;
-	if (check_dups_str(ar, i) == -1)
+	if (check_dups_str(ar, i) == -1
+		|| string_to_stack2(*ar, i, stack) == -1)
 	{
 		free_strings(ar, j);
 		return (-1);
 	}
+	free_strings(ar, j);
+	return (0);
+}
+
+int	string_to_stack2(char *ar, int i, t_stack *stack)
+{
+	int	temp;
+
 	while (i >= 0)
 	{
-		if (check_num(ar[i]) == -1)
-		{
-			free_strings(ar, j);
+		if (check_num(&ar[i]) == -1)
 			return (-1);
-		}
-		temp = ft_atoi(ar[i]);
+		temp = ft_atoi(&ar[i]);
 		stack_modif(create_node(temp), stack);
 		i--;
 	}
-	free_strings(ar, j);
 	return (0);
 }
 

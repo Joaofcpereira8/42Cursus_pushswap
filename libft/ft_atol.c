@@ -15,7 +15,7 @@
 long	ft_atol(const char *str)
 {
 	int				i;
-	long 			result;
+	long			result;
 	long			negative;
 
 	i = 0;
