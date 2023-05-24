@@ -32,7 +32,7 @@ void	free_strings(char **str, int j)
 	int	i;
 
 	i = 0;
-	while (i < j)
+	while (i <= j)
 	{
 		free(str[i]);
 		i++;
@@ -61,7 +61,7 @@ int	stack_string(char *argv, t_stack *stack_a)
 		write (2, "Error\n", 6);
 		return (-1);
 	}
-	if (check_order_sorted(stack_a) == 0)
+	if (check_order_sorted(stack_a) == -1)
 		return (-1);
 	return (0);
 }
@@ -73,7 +73,7 @@ int	stack_args(int argc, char **argv, t_stack *stack_a)
 		write (2, "Error\n", 6);
 		return (-1);
 	}
-	if (check_order_sorted(stack_a) == 0)
+	if (check_order_sorted(stack_a) == -1)
 		return (-1);
 	return (0);
 }

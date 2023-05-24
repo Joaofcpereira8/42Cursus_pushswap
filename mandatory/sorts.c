@@ -6,7 +6,7 @@
 /*   By: jofilipe <jofilipe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:13:23 by jofilipe          #+#    #+#             */
-/*   Updated: 2023/05/05 17:13:23 by jofilipe         ###   ########.fr       */
+/*   Updated: 2023/05/24 10:51:24 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort_alg(t_stack *stack_a, t_stack *stack_b)
 {
+	if (stack_a->size < 2)
+		return ;
 	if (stack_a->size == 2)
 		sort2(stack_a, stack_b);
 	if (stack_a->size == 3)

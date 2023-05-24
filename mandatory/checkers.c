@@ -24,8 +24,8 @@ int	check_dups_str(char **array, int size)
 			if (ft_atoi(array[i]) == ft_atoi(array[size]))
 				return (-1);
 			i--;
-			size--;
 		}
+		size--;
 	}
 	return (0);
 }
@@ -34,7 +34,7 @@ int	check_dups_arg(char **array, int size)
 {
 	int	i;
 
-	while (size > 0)
+	while (size >= 0)
 	{
 		i = size - 1;
 		while (i > 0)
@@ -55,17 +55,22 @@ int	check_order_sorted(t_stack *stack)
 
 	stack_copy = copy_stack(stack);
 	i = stack_copy->size;
+	if (i == 1)
+	{
+		free(stack_copy);
+		return (-1);
+	}
 	while (i > 1)
 	{
 		if (stack_copy->top->data > stack_copy->top->next->data)
 		{
 			free(stack_copy);
-			return (-1);
+			return (0);
 		}
 		stack_copy->top = stack_copy->top->next;
 		i--;
 	}
 	stack_copy->top = stack_copy->top->next;
 	free(stack_copy);
-	return (0);
+	return (-1);
 }

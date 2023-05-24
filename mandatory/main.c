@@ -38,12 +38,17 @@ int	string_to_stack(char *argv, t_stack *stack)
 
 	ar = ft_split(argv, ' ');
 	i = 0;
+	if (!ar[0])
+	{
+		free_strings(ar, i);
+		return (-1);
+	}
 	while (ar[i])
 		i++;
 	i--;
 	j = i;
 	if (check_dups_str(ar, i) == -1
-		|| string_to_stack2(*ar, i, stack) == -1)
+		|| string_to_stack2(ar, i, stack) == -1)
 	{
 		free_strings(ar, j);
 		return (-1);
@@ -52,15 +57,15 @@ int	string_to_stack(char *argv, t_stack *stack)
 	return (0);
 }
 
-int	string_to_stack2(char *ar, int i, t_stack *stack)
+int	string_to_stack2(char **ar, int i, t_stack *stack)
 {
 	int	temp;
 
 	while (i >= 0)
 	{
-		if (check_num(&ar[i]) == -1)
+		if (check_num(ar[i]) == -1)
 			return (-1);
-		temp = ft_atoi(&ar[i]);
+		temp = ft_atoi(ar[i]);
 		stack_modif(create_node(temp), stack);
 		i--;
 	}

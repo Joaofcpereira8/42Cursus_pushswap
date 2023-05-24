@@ -43,7 +43,7 @@ typedef struct moves_index
 
 //-------main-------//
 int				string_to_stack(char *argv, t_stack *stack_a);
-int string_to_stack2(char *ar, int i, t_stack *stack);
+int string_to_stack2(char **ar, int i, t_stack *stack);
 int				param_to_stack(int argc, char **argv, t_stack *stack);
 void			stack_init(t_stack *stack_a, t_stack *stack_b);
 
