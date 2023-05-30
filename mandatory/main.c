@@ -86,7 +86,7 @@ int	main(int argc, char **argv)
 	t_stack	stack_b;
 
 	stack_init(&stack_a, &stack_b);
-	if (argc == 2)
+	if (argc == 2 && argv[1][0] != '\0')
 	{
 		if (stack_string(argv[1], &stack_a) == -1)
 		{
