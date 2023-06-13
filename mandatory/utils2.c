@@ -19,6 +19,7 @@ int	find_max_pos(t_stack *stack)
 	int		i;
 	t_stack	*stack2;
 
+	pos = 1;
 	i = 1;
 	stack2 = copy_stack(stack);
 	max = stack2->top->data;

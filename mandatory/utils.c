@@ -34,9 +34,9 @@ void	stack_modif(t_node *new_node, t_stack *stack)
 	}
 	else
 	{
-		new_node->next = stack->top; //2 -> 3
-		new_node->prev = stack->top->prev; //2->3->2
-		stack->top->prev->next = new_node; //2->3->4->2
+		new_node->next = stack->top;
+		new_node->prev = stack->top->prev;
+		stack->top->prev->next = new_node;
 		stack->top->prev = new_node;
 		stack->top = new_node;
 		stack->size++;

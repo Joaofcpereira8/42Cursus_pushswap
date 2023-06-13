@@ -106,7 +106,4 @@ void			free_stacks(t_stack *stack_a, t_stack *stack_b);
 int				stack_string(char *argv, t_stack *stack_a);
 int				stack_args(int argc, char **argv, t_stack *stack_a);
 
-//-------utils5-------//
-int check_string_empty(char *argv);
-
 #endif //PUSH_SWAP_H
